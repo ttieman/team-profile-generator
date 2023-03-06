@@ -7,13 +7,15 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require('./lib/Intern');
 
+const generatedHTML = require('../team-profile-generator/src/generateHtml');
+
 //an array of the members that belong to the team
 const teamRoster = [];
 
 // this will promp the user to enter the manager of the teams information
 //when the software has been opended 
 
-function promptManager() {
+const promptManager = () => {
     return inquirer.prompt([
         {
             type: 'input',
@@ -77,7 +79,7 @@ function promptManager() {
     })
 };
 
-function promptEmployee() {
+const promptEmployee = () => {
     return inquirer.prompt([
         {
             type:'list',
@@ -179,8 +181,8 @@ function promptEmployee() {
             
             return teamRoster;
         }
-    })
-}
+    });
+};
 
 function writeFile(writeData){
     fs.writeFile('./dist/index.html', writeData, err => {
@@ -192,4 +194,17 @@ function writeFile(writeData){
         }
     });
 };
+
+promptManager()
+.then(promptEmployee)
+.then(teamRoster => { 
+    console.log(teamRoster);
+    return generatedHTML(teamRoster);
+
+}).then(page => {
+    
+    return writeFile(page);
+}) .catch(err => {
+    console.log(err);
+});
 
