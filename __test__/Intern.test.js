@@ -3,6 +3,14 @@ const Intern = require("../lib/Intern");
 const bob = new Intern("bob", "14", "bobman@gmail.com","asu");
 
 describe('Intern', () => {
+  describe("checks each propery in the Intern class for correct returned values" , () => {
+    it('Testing all the properties in order to determine correct returns' , () => {
+      expect(bob.name).toBe("bob");
+      expect(bob.id).toBe("14");
+      expect(bob.email).toBe("bobman@gmail.com");
+      expect(bob.school).toBe("asu");
+    });
+  });
   describe('Check the Intern class to ensure the data is populated correctly', () => {
     
     it(' Tests the Intern Name property', () => {
