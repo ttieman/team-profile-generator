@@ -2,7 +2,7 @@ const Manager = require('../lib/Manager.js');
 
 const bob = new Manager("bob", "14", "bobman@gmail.com", "15115");
 
-describe('Manager', () => {
+describe('Manager', () => { // this tests the manager for data return and make sure the functions are returning the right values
   describe("checks each propery in the manager class for correct returned values" , () => {
     it('Testing all the properties in order to determine correct returns' , () => {
       expect(bob.name).toBe("bob");

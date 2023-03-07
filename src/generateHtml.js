@@ -1,51 +1,51 @@
-function generateManagerCard (manager){
-        return `
+function generateManagerCard(manager) {   // this handles generating the manager cards
+    return `
         <div class="col-4 mt-4">
         <div class="card h-100">
             <div class="card-header">
                 <h3>${manager.name}</h3>
-                <h4>Manager</h4><i class="material-icons">content_paste</i>
+                <h4>Manager</h4><i class="material-icons">integration_instructions</i>
             </div>
             <div class="card-body">
-                <p class="id">ID: ${manager.id}</p>
-                <p class="email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
-                <p class="office">Office Number: ${manager.officeNumber}</p>
+                <p>ID: ${manager.id}</p>
+                <p>Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
+                <p>Office Number: ${manager.officeNumber}</p>
             </div>
         </div>
     </div>
         `;
 }
 
-function generateEngineerCard(engineer){
-    return`
-    <div class="col-4 mt-4">
+function generateEngineerCard(engineer) { // this function generates the engineer card
+    return `
+    <div class="col-4 mt-4">    
         <div class="card h-100">
             <div class="card-header">
                 <h3>${engineer.name}</h3>
-                <h4>Engineer</h4><i class="material-icons">laptop_mac</i>
+                <h4>Engineer</h4><i class="material-icons">engineering</i>
             </div>
             <div class="card-body">
-                <p class="id">ID: ${engineer.id}</p>
-                <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                <p class="github">Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
+                <p>ID: ${engineer.id}</p>
+                <p>Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+                <p>Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
             </div>
         </div>
     </div>
     `;
 }
 
-function generateInternCard (intern){
-    return`
+function generateInternCard(intern) {  // this generates the intern card
+    return `
     <div class="col-4 mt-4">
     <div class="card h-100">
         <div class="card-header">
             <h3>${intern.name}</h3>
-            <h4>Intern</h4><i class="material-icons">assignment_ind</i>
+            <h4>Intern</h4><i class="material-icons">person</i>
         </div>
         <div class="card-body">
-            <p class="id">ID: ${intern.id}</p>
-            <p class="email">Email:<a href="mailto:${intern.email}">${intern.email}</a></p>
-            <p class="school">School: ${intern.school}</p>
+            <p>ID: ${intern.id}</p>
+            <p>Email:<a href="mailto:${intern.email}">${intern.email}</a></p>
+            <p>School: ${intern.school}</p>
         </div>
 </div>
 </div>
@@ -53,17 +53,17 @@ function generateInternCard (intern){
 }
 
 
- const generatedHTML = (data) => {
+const generatedHTML = (data) => {     // this returnes the generated html joined together to be placed into the template
     cardArray = data.map(employee => {
         const role = employee.getRole();
         if (role === "Manager") {
-          return generateManagerCard(employee);
+            return generateManagerCard(employee);
         } else if (role === 'Engineer') {
-          return generateEngineerCard(employee);
+            return generateEngineerCard(employee);
         } else if (role === 'Intern') {
-          return generateInternCard(employee);
+            return generateInternCard(employee);
         }
-      });
+    });
 
     const employeeCardArray = cardArray.join('');
 
@@ -72,16 +72,15 @@ function generateInternCard (intern){
 }
 
 
-function generateSite(generatedTeam){
-    return`
+function generateSite(generatedTeam) {  // this is the template that the generatedTeam gets placed in
+    return `
     <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Team Profile</title>
+        <title>Team Profile Generator</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Public+Sans:300i,300,500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
@@ -95,7 +94,6 @@ function generateSite(generatedTeam){
         <main>
             <div class="container">
                 <div class="row justify-content-center" id="team-cards">
-                    <!--Team Cards-->
                     ${generatedTeam}
                 </div>
             </div>
@@ -105,7 +103,7 @@ function generateSite(generatedTeam){
    
     </html>
   `;
-  }
- 
-  // export to index
-  module.exports = generatedHTML; 
+}
+
+// export to index
+module.exports = generatedHTML; 

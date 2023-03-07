@@ -2,7 +2,7 @@ const Employee = require('../lib/Employee');
 
 const bob = new Employee("bob", "14", "bobman@gmail.com");
 
-describe('Employee', () => {
+describe('Employee', () => {   // this tests the employee for data return and make sure the functions are returning the right values
   describe("checks each propery in the Employee class for correct returned values" , () => {
     it('Testing all the properties in order to determine correct returns' , () => {
       expect(bob.name).toBe("bob");

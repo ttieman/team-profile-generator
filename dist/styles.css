@@ -1,0 +1,31 @@
+body {
+    background-color: #1a1a1a;   
+    color: #e6e6e6;
+}
+#navbar {
+    background-color: #212121;
+}
+#navbar-text {
+    color: #e6e6e6;
+}
+.card {
+    background-color: #424242;
+    color: #e6e6e6;
+}
+.card-header {
+    background-color: #212121;
+    color: #e6e6e6;
+    border-bottom: none;
+}
+.card-header h3, .card-header h4 {
+    color: #e6e6e6;
+}
+.card-body {
+    border-top: none;
+}
+a {
+    color: #ffc107;
+}
+a:hover {
+    color: #ff9800;
+}

@@ -2,7 +2,7 @@ const Intern = require("../lib/Intern");
 
 const bob = new Intern("bob", "14", "bobman@gmail.com","asu");
 
-describe('Intern', () => {
+describe('Intern', () => { // this tests the intern for data return and make sure the functions are returning the right values
   describe("checks each propery in the Intern class for correct returned values" , () => {
     it('Testing all the properties in order to determine correct returns' , () => {
       expect(bob.name).toBe("bob");
