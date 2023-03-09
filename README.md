@@ -71,7 +71,7 @@ To the Repo
 [https://github.com/ttieman/team-profile-generator](https://github.com/ttieman/team-profile-generator)  
 
 Video Guide
-
+[https://drive.google.com/file/d/1UGy2k5isQUQxU_BW2hmtJoQk3ylNSpq1/view](https://drive.google.com/file/d/1UGy2k5isQUQxU_BW2hmtJoQk3ylNSpq1/view)
   
   
 ## Tests 
